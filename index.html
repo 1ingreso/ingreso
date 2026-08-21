@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credencial</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #eef0f3;
+    display: flex;
+    justify-content: center;
+  }
+
+  .phone {
+    width: 100%;
+    max-width: 420px;
+    min-height: 100vh;
+    background: #eef0f3;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  .header {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e6e6ea;
+  }
+
+  .back-arrow {
+    font-size: 26px;
+    color: #6b7280;
+    line-height: 1;
+    font-weight: 300;
+  }
+
+  .header h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #4b4f58;
+  }
+
+  /* Content */
+  .content {
+    padding: 24px 20px;
+    flex: 1;
+  }
+
+  /* Status row */
+  .status-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+
+  .status-col {
+    flex: 1;
+    text-align: center;
+  }
+
+  .status-label {
+    font-size: 14px;
+    color: #4b4f58;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .btn-adeudada {
+    background: #22c55e;
+  }
+
+  .btn-qr {
+    background: #5b3df0;
+  }
+
+  .qr-icon {
+    width: 18px;
+    height: 18px;
+    color: #ffffff;
+  }
+
+  /* Credential Card */
+  .card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 32px 24px 36px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .card-label {
+    font-size: 15px;
+    color: #a8adb8;
+    margin-bottom: 4px;
+  }
+
+  .socio-number {
+    font-size: 34px;
+    font-weight: 700;
+    color: #1c1e21;
+    margin-bottom: 24px;
+  }
+
+  .avatar {
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    margin: 0 auto 22px;
+    background: linear-gradient(135deg, #dbe0ea 0%, #c3c9d6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .member-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1c1e21;
+    margin-bottom: 20px;
+  }
+
+  .field-label {
+    font-size: 15px;
+    color: #00050e;
+    margin-bottom: 4px;
+  }
+
+  .field-value {
+    font-size: 21px;
+    font-weight: 700;
+    color: #1c1e21;
+    margin-bottom: 18px;
+  }
+
+  .field-value:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Footer note */
+  .footer-note {
+    text-align: center;
+    color: #8b91a3;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 24px;
+    padding: 0 10px;
+  }
+
+  .footer-note b {
+    color: #6b7280;
+    font-weight: 700;
+  }
+
+  /* Nav bar */
+  .navbar {
+    background: #f3f0fb;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 0;
+    margin-top: auto;
+  }
+
+  .nav-icon {
+    width: 22px;
+    height: 22px;
+    opacity: 0.55;
+  }
+</style>
+</head>
+<body>
+  <div class="phone">
+    <div class="header">
+      <span class="back-arrow">&#8249;</span>
+      <h1>Credencial</h1>
+    </div>
+
+    <div class="content">
+      <div class="status-row">
+        <div class="status-col">
+          <div class="status-label">Estado de Cuota</div>
+          <button class="btn btn-adeudada">Pago al dia </button>
+        </div>
+        <div class="status-col">
+          <div class="status-label">Ingreso por QR</div>
+          <button class="btn btn-qr">
+            <svg class="qr-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 3h7v7H3V3zm2 2v3h3V5H5zm-2 9h7v7H3v-7zm2 2v3h3v-3H5zm9-13h7v7h-7V3zm2 2v3h3V5h-3zM13 13h2v2h-2v-2zm0 4h2v2h-2v-2zm4-4h2v2h-2v-2zm0 4h2v2h-2v-2zm-2-2h2v2h-2v-2zm4 0h2v2h-2v-2z"/>
+            </svg> Generar QR
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Nro de Socio</div>
+        <div class="socio-number">90380</div>
+
+        <div class="avatar">
+          <img src="image.jpeg" alt="Foto del socio">
+        </div>
+
+        <div class="member-name">Donozo Nehuen</div>
+
+        <div class="field-label">Documento</div>
+        <div class="field-value">Arg-DNI 45257428</div>
+        
+        <div class="field-label">Categorías</div>
+        <div class="field-value">ACTIVO</div>
+      </div>
+
+      <div class="footer-note">
+        Esta credencial es <b>personal</b> e <b>intransferible</b> para uso exclusivo del titular.
+      </div>
+    </div>
+
+    <div class="navbar">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </div>
+  </div>
+</body>
+</html>
